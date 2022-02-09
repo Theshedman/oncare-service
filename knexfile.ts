@@ -14,6 +14,9 @@ class KnexConfig {
       user: db_user,
       password: db_password,
       database: db_name,
+      ssl: {
+        rejectUnauthorized: false,
+      },
     },
     migrations: {
       directory: './src/database/migrations',
