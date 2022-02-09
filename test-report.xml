@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/Users/ps2020-01/Documents/GitHub/Theshedman/oncare/src/tests/__tests__/unitTests/auths/authService.spec.ts">
+    <testCase name="Auth Service Unit Test should be defined" duration="8"/>
+    <testCase name="Auth Service Unit Test should fail login if the email does not exist" duration="80"/>
+    <testCase name="Auth Service Unit Test should not login with invalid email" duration="31"/>
+    <testCase name="Auth Service Unit Test should not login with invalid password" duration="33"/>
+    <testCase name="Auth Service Unit Test should generate JWT token" duration="13"/>
+    <testCase name="Auth Service Unit Test should throw error generating JWT token if id is not provided" duration="20"/>
+    <testCase name="Auth Service Unit Test should decode JWT token" duration="11"/>
+    <testCase name="Auth Service Unit Test should throw error while decoding JWT token" duration="11"/>
+  </file>
+  <file path="/Users/ps2020-01/Documents/GitHub/Theshedman/oncare/src/tests/__tests__/unitTests/users/userService.spec.ts">
+    <testCase name="User Service Unit Test should be defined" duration="2"/>
+    <testCase name="User Service Unit Test should create a new user" duration="14"/>
+    <testCase name="User Service Unit Test should not create a new user if email is invalid" duration="7"/>
+    <testCase name="User Service Unit Test should fail validation if user email already exists " duration="12"/>
+    <testCase name="User Service Unit Test should fail validation if user phone already exists " duration="8"/>
+    <testCase name="User Service Unit Test should get one user" duration="5"/>
+    <testCase name="User Service Unit Test should update user" duration="6"/>
+  </file>
+  <file path="/Users/ps2020-01/Documents/GitHub/Theshedman/oncare/src/tests/__tests__/unitTests/users/userModel.spec.ts">
+    <testCase name="User Model Unit Test should be defined" duration="5"/>
+    <testCase name="User Model Unit Test should be an instance of a BaseModel" duration="2"/>
+    <testCase name="User Model Unit Test should be an instance of a Model" duration="1"/>
+    <testCase name="User Model Unit Test should have a tableName" duration="1"/>
+    <testCase name="User Model Unit Test should have a jsonSchema" duration="2"/>
+  </file>
+</testExecutions>

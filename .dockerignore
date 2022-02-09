@@ -1,0 +1,11 @@
+.git/
+.env-sample
+.dockerignore
+.gitignore
+
+
+logs/
+dist/
+.idea/
+.run/
+node_modules/
