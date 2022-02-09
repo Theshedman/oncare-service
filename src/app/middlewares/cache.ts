@@ -21,7 +21,11 @@ export class CacheMiddleware extends BaseMiddleware implements IMiddleware {
 
       if (result) {
         logger.info('Return cached result');
-        return res.json(JSON.parse(result));
+        return res.json({
+          status: "success",
+          message: 'Successfully retrieved from cache',
+          data: JSON.parse(result)
+        });
       }
 
       return next();
