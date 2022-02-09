@@ -2,7 +2,9 @@
 
 Oncare Service
 
-Postman API documentation: 
+## API Documentation
+
+Postman API documentation: https://documenter.getpostman.com/view/5904643/UVeKp4jp
 
 ## Installation
 
@@ -45,6 +47,9 @@ docker run \
   -p 9082:9082 \
   oncare-service
 ````
+
+
+## Running the application locally
 
 install project dependencies
 ```
