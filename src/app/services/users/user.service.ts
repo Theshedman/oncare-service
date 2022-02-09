@@ -60,27 +60,45 @@ export class UserService implements IUserService {
     return this.userRepository.delete(id);
   }
 
-  public findAll(): Promise<IUserModel[]> {
+  public async findAll(): Promise<IUserModel[]> {
     logger.info('Running UserService.findAll');
 
-    return this.userRepository.findAll();
+    const users: IUserModel[] = await this.userRepository.findAll();
+
+    users.forEach((user: IUserOptionalModel) => {
+      delete user.password;
+    });
+
+    return users;
   }
 
-  public findById(id: string): Promise<IUserModel> {
+  public async findById(id: string): Promise<IUserModel> {
     logger.info('Running UserService.findById');
 
-    return this.userRepository.findById(id);
+    const user: IUserOptionalModel = await this.userRepository.findById(id);
+
+    delete user.password;
+
+    return user as IUserModel;
   }
 
-  public findOne(data: IUserOptionalModel): Promise<IUserOptionalModel> {
+  public async findOne(data: IUserOptionalModel): Promise<IUserOptionalModel> {
     logger.info('Running UserService.findOne');
 
-    return this.userRepository.findOne(data);
+    const user: IUserOptionalModel = await this.userRepository.findOne(data);
+
+    delete user.password;
+
+    return user as IUserModel;
   }
 
-  public update(id: string, data: IUserOptionalModel): Promise<IUserModel> {
+  public async update(id: string, data: IUserOptionalModel): Promise<IUserModel> {
     logger.info('Running UserService.update');
 
-    return this.userRepository.update(id, data);
+    const user: IUserOptionalModel = await this.userRepository.update(id, data);
+
+    delete user.password;
+
+    return user as IUserModel;
   }
 }
