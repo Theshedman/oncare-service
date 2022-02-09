@@ -30,15 +30,18 @@ docker build -t oncare-service .
 After building the docker, you can run it by executing this command:
 ```bash
 docker run \
-  -e DB_USER \
-  -e NODE_ENV \
-  -e PORT \
-  -e DB_HOST \
-  -e DB_PORT \
-  -e DB_NAME \
-  -e DB_USER \
-  -e DB_PASSWORD \
-  -e JWT_SECRET \
+  -e DB_USER="theshedman" \
+  -e NODE_ENV="development" \
+  -e PORT=9082 \
+  -e DB_HOST="localhost" \
+  -e DB_PORT=5432 \
+  -e DB_NAME="postgres" \
+  -e DB_PASSWORD= \
+  -e REDIS_PORT=25061 \
+  -e REDIS_HOST="lafia-redis-do-user-3558509-0.b.db.ondigitalocean.com" \
+  -e REDIS_PASSWORD="7XhTaoZCkk9dw0LX" \
+  -e REDIS_USERNAME="default" \
+  -e JWT_SECRET="hasliehgaieshg" \
   -p 9082:9082 \
   oncare-service
 ````

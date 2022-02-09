@@ -7,15 +7,17 @@ import { logger } from '../../utils';
 export class RedisService {
   private redisClient: any;
   private env: IEnv;
-  private readonly redisConnectionString: string;
 
   constructor() {
     this.env = Env.getAll();
-    this.redisConnectionString = `rediss://${this.env.redis_username}:${this.env.redis_password}@${this.env.redis_host}:${this.env.redis_port}?allowUsernameInURI=true`;
 
-    this.redisClient = new Redis(this.redisConnectionString);
+    this.RedisConnection();
+  }
 
-    console.log('RedisClient:', this.redisClient);
+  private RedisConnection() {
+    const redisConnectionString = `rediss://${this.env.redis_username}:${this.env.redis_password}@${this.env.redis_host}:${this.env.redis_port}?allowUsernameInURI=true`;
+
+    this.redisClient = new Redis(redisConnectionString);
   }
 
   public async set(key: string, value: any, expiresAt: number): Promise<void> {
