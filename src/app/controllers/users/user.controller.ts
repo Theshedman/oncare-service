@@ -25,12 +25,8 @@ export class UserController extends BaseController {
     try {
       const user = await this.userService.create(req.body);
 
-      console.log('New User:', user);
-
       // cache user data for 15s
       await this.redisService.set(user.id, user, 15);
-
-      console.log('User cached by redis');
 
       this.success(res, user, 'User created successfully', 201);
     } catch (e: any) {
@@ -58,8 +54,6 @@ export class UserController extends BaseController {
 
     try {
       const user = await this.userService.findById(req.params.id);
-
-      console.log('Fetching from the db');
 
       // cache users data for 15s
       await this.redisService.set(user.id, user, 15);
